@@ -180,7 +180,7 @@ def plot_data(df):
 
 # Add a selectbox to the sidebar:
 page = st.sidebar.selectbox(
-    'Choose a page',
+    'Choose a Index',
     ['ISM Index', 'New Order Index']
 )
 
