@@ -26,6 +26,9 @@ with open(output, "r") as f:
 
 soup = BeautifulSoup(contents, 'html.parser')
 
+# extracting the tittle which is the month 
+title_tag = soup.title
+
 # find New Orders and Production Contracting ....
 h3_0 = soup.find(lambda tag: tag.name=="h3" and "New Orders and Production Contracting" in tag.text)
 # Find the next p tags (paragraphs) in the HTML after h3 new orders
@@ -187,7 +190,7 @@ page = st.sidebar.selectbox(
 ################# PAGE 1 #####################
 if page == 'ISM Index':
     st.header('ISM Index')
-    st.title('ISM Manufacturing Index')
+    st.title(f'ISM Manufacturing Index {title_tag.string}')
     # Text input for the ISM PMI Manufacturing Index
     default_text_0 = paragraphs_0[6].text if len(paragraphs_0) > 1 else ''
     text_input = st.text_area("Text extracted from the ISM PMI Manufacturing Index report:", value=default_text_0, height=200, max_chars=None, key=None)
