@@ -3,3 +3,5 @@ pandas
 streamlit
 seaborn
 matplotlib
+gdown
+bs4
