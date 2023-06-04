@@ -6,3 +6,6 @@ matplotlib
 gdown
 bs4
 lxml
+dateutil
+numpy
+matplotlib.colors
